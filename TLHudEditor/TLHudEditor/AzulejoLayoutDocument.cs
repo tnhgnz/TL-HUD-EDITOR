@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 
 public class AzulejoLayoutDocument
 {
@@ -51,7 +51,7 @@ public class ReferenceInfo
     public IntSize2D SystemResolution { get; set; }
 
     [JsonProperty("gameResolution")]
-    public IntSize2D GameResolution { get; set; }
+    public DoubleSize2D GameResolution { get; set; }
 
     [JsonProperty("viewportScale")]
     public double ViewportScale { get; set; }
@@ -79,6 +79,15 @@ public class ReferenceInfo
 
     [JsonProperty("ConsoleApplicationScale")]
     public int ConsoleApplicationScale { get; set; }
+}
+
+public class DoubleSize2D
+{
+    [JsonProperty("width")]
+    public double Width { get; set; }
+
+    [JsonProperty("height")]
+    public double Height { get; set; }
 }
 
 public class IntSize2D
