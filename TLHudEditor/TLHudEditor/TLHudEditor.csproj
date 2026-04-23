@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64</Platforms>
+    <ApplicationIcon>logotipe.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Design\Montserrat-Bold.ttf" />
+    <None Remove="Design\tglogo.png" />
+    <None Remove="Design\twitchlogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="logotipe.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Wpf.Ui">
+      <HintPath>..\Libs\Wpf.Ui.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Design\Montserrat-Bold.ttf" />
+    <Resource Include="Design\tglogo.png" />
+    <Resource Include="Design\twitchlogo.png" />
+  </ItemGroup>
+
+</Project>

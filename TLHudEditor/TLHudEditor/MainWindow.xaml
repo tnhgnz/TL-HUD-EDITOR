@@ -1,0 +1,53 @@
+﻿<Window x:Class="TLHudEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TLHudEditor"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Height="145" 
+        Width="270"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Topmost="True"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Title="TL HUD Editor"
+        Loaded="Window_Loaded">
+    <Border BorderThickness="1" BorderBrush="#FF282828" Background="#FF141414" CornerRadius="3" MouseLeftButtonDown="MoveWindow">
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+                    <Border Height="25" Width="25" Background="#FF9147FF" CornerRadius="3" Cursor="Hand" MouseLeftButtonDown="OpenTwitch">
+                        <Image Source="/Design/twitchlogo.png" Height="15" Width="15"/>
+                    </Border>
+
+                    <Border Height="25" Width="25" Background="#FF27A7E7" CornerRadius="3" Margin="5 0 0 0" Cursor="Hand" MouseLeftButtonDown="OpenTelegram">
+                        <Image Source="/Design/tglogo.png" Height="15" Width="15"/>
+                    </Border>
+                </StackPanel>
+
+                <Button Height="25" Width="25" Padding="0" HorizontalAlignment="Right" Cursor="Hand" Click="Close">
+                    <ui:SymbolIcon Symbol="Dismiss48" Foreground="White" FontSize="12"/>
+                </Button>
+            </Grid>
+            
+            <StackPanel Grid.Row="1">
+                <TextBlock Text="TL HUD EDITOR" HorizontalAlignment="Center" FontSize="28" Margin="0 10 0 0"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
+                    <ComboBox x:Name="ConfigsList" Width="200"/>
+                    <Button Height="36" Width="36" Padding="0" Margin="10 0 0 0" Cursor="Hand" Click="OpenConfigEditWindow">
+                        <ui:SymbolIcon Symbol="TextBulletListSquareEdit24" FontSize="18"/>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
